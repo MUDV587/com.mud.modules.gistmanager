@@ -1,0 +1,71 @@
+/* GroupHeader 组件样式。icon 采用 project://database 路径 */
+
+.gm-group-header {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.gm-group-header > #headerRow {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+    align-items: center;
+    min-height: 24px;
+    border-color: rgb(35, 35, 35);
+    background-color: rgb(48, 48, 48);
+    border-bottom-width: 1px;
+}
+
+.gm-group-header > #headerRow #caret,
+.gm-group-header .gm-group-header__caret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/d_IN_foldout_on.png?fileID=2800000&guid=c00e216dd91b4444f917f45535e514d1&type=3#d_IN_foldout_on");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.gm-group-header > #headerRow #headerTitle {
+    display: flex;
+    flex: 1 0 auto;
+    font-size: 14px;
+    color: rgb(244, 244, 244);
+    min-height: 18px;
+    margin: 1px 5px 1px 1px;
+    padding: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gm-group-header.collapsed #headerRow #caret,
+.gm-group-header.collapsed #headerRow #caret {
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/d_IN_foldout.png?fileID=2800000&guid=d5b214c4bf32f55458d2731cc08a3c36&type=3#d_IN_foldout");
+}
+
+.gm-group-header > #groupContainer {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* 折叠子行：不依赖层级深度；折叠显隐由代码直接派发 inline display（USS 对 CloneTree 后的行不重算），此处仅作兜底文档 */
+.gm-group-header.collapsed .gm-item-row {
+    display: none;
+}
+
+.gm-group-header.collapsed .gm-item-row.selected {
+    display: flex;
+}
+
+.gm-group-header.collapsed .gm-item-row {
+    display: none;
+}
+
+.gm-group-header.collapsed .gm-item-row.selected {
+    display: flex;
+}

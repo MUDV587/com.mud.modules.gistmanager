@@ -1,0 +1,99 @@
+site_name: MUD Gist Manager
+site_description: Manage GitHub Gist snippets as versioned Unity scripts.
+site_url: https://mudv587.github.io/com.mud.modules.gistmanager/
+repo_url: https://github.com/MUDV587/com.mud.modules.gistmanager
+repo_name: MUDV587/com.mud.modules.gistmanager
+edit_uri: edit/main/Documentation~/docs/
+copyright: Copyright &copy; 2026 MUDV587
+
+docs_dir: Documentation~/docs
+site_dir: .site
+use_directory_urls: true
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: quick-start.md
+  - User Guide:
+      - Settings Page: settings.md
+      - Gist Library: gist-library.md
+      - Sync & Local Changes: sync.md
+      - Enable & Disable: enable-disable.md
+      - Target Root Switching: target-root.md
+  - Reference:
+      - Manifest Format: manifest.md
+      - Troubleshooting & FAQ: troubleshooting-faq.md
+      - Design & Internals: design.md
+      - Changelog: changelog.md
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: zh
+          name: 简体中文
+          build: true
+          nav_translations:
+            Home: 首页
+            Getting Started: 入门
+            Installation: 安装
+            Quick Start: 快速开始
+            User Guide: 使用指南
+            Settings Page: 设置页
+            Gist Library: Gist 库
+            Sync & Local Changes: 同步与本地改动
+            Enable & Disable: 启用 / 禁用
+            Target Root Switching: 切换 Target Root
+            Reference: 参考
+            Manifest Format: 清单格式
+            Troubleshooting & FAQ: 故障排查与 FAQ
+            Design & Internals: 设计与内部实现
+            Changelog: 变更日志
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

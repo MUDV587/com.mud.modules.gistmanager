@@ -1,0 +1,20 @@
+/* gistList 组件样式
+   滚动列表区域：listContainer + 空态（gm-empty-area）。 */
+
+.gm-gist-list {
+    flex: 1 0 0;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 空态组件（Instance 包装）：填满列表容器剩余高度 */
+.gm-gist-list #emptyArea {
+    flex: 1 0 0;
+    min-height: 0;
+}
+
+.gm-gist-list .gm-gist-list__list-container {
+    flex: 1 0 0;
+    flex-direction: column;
+    overflow: hidden;
+}

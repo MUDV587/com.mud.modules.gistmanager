@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistList/GistList.uss" />
+    <ui:Template name="EmptyArea" src="/Packages/com.mud.modules.gistmanager/Editor/Components/EmptyArea/EmptyArea.uxml" />
+    <!-- gistList：滚动列表区域 + 空态 -->
+    <ui:VisualElement class="gm-gist-list">
+        <ui:VisualElement name="listContainer" class="gm-gist-list__list-container">
+            <ui:ScrollView name="scrollView" class="unity-scroll-view unity-scroll-view--scroll unity-scroll-view--vertical" />
+        </ui:VisualElement>
+        <ui:Instance template="EmptyArea" name="emptyArea" />
+    </ui:VisualElement>
+</ui:UXML>

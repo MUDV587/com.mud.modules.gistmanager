@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/ToolbarDropdown/ToolbarDropdown.uss" />
+    <!-- ToolbarDropdown：工具栏下拉按钮（button + label + caret） -->
+    <ui:Button name="ToolbarDropdownButton" class="gm-toolbar-dropdown" text=" " >
+        <ui:Label name="ToolbarDropdownLabel" class="gm-toolbar-dropdown__label" text="Dropdown" />
+        <ui:VisualElement name="ToolbarDropdownCaret" class="gm-toolbar-dropdown__caret" />
+    </ui:Button>
+</ui:UXML>

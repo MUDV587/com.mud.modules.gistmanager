@@ -1,0 +1,41 @@
+/* Splitter：左右分栏组件样式
+   handle = flex item，3px 实心黑条，整条紧贴右栏背景 */
+
+.gm-splitter {
+    flex: 1 0 0;
+    flex-direction: row;
+    position: relative;
+}
+
+.gm-splitter__pane {
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gm-splitter__pane--first {
+    min-width: 300px;
+    width: 425px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.gm-splitter__pane--second {
+    min-width: 300px;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-left-width: 0;
+}
+
+.gm-splitter__handle {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 3px;
+    min-width: 3px;
+    max-width: 3px;
+    /* 整条实心填充：避免透明区透出窗口背景，在右栏黑底旁留下浅缝 */
+    background-color: rgb(35, 35, 35);
+    cursor: split-resize-left-right;
+}

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/ToolbarSearch/ToolbarSearch.uss" />
+    <!-- ToolbarSearch：工具栏搜索框。
+         放大镜与输入框合并在同一个圆角容器内 -->
+    <ui:VisualElement class="gm-toolbar-search">
+        <!-- 放大镜仅做装饰：不可点击（点击穿透到输入框） -->
+    <ui:VisualElement class="gm-toolbar-search__icon" picking-mode="Ignore" />
+        <ui:TextField name="ToolbarSearchText" class="gm-toolbar-search__input" hide-placeholder-on-focus="true" placeholder="" />
+        <ui:Button name="ToolbarSearchClear" class="gm-toolbar-search__clear" text="×" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,70 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistDetails/GistDetails.uss" />
+    <!-- gistDetails：右侧详情面板（标题/详情/Files） -->
+    <ui:VisualElement class="gm-gist-details">
+        <ui:ScrollView name="detailScrollView" class="unity-scroll-view unity-scroll-view--scroll unity-scroll-view--vertical">
+            <!-- 多选模式：默认隐藏，控制器按选择数量切换 -->
+            <ui:VisualElement name="multiSelectDetails" class="gm-hidden">
+                <ui:VisualElement>
+                    <ui:VisualElement name="multiSelectDetailsHeader">
+                        <ui:Label name="multiSelectTitle" class="unity-label" text="" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="multiSelectInfoBoxContainer" />
+                    <ui:VisualElement name="multiSelectFoldoutsContainer" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- 单选模式：detailsHeader（标题/版本/名称/Open-Gist）-->
+            <ui:VisualElement name="detail" class="detail">
+                <ui:VisualElement name="detailsHeader">
+                    <ui:VisualElement>
+                        <ui:VisualElement name="titleBar" class="titleBar">
+                            <ui:Label name="detailTitle" class="unity-label" text="" />
+                            <ui:VisualElement name="detailsToolbar" class="gm-details-toolbar">
+                                <ui:VisualElement name="toolbarMain">
+                                    <ui:VisualElement name="builtInActions" class="rightItems">
+                                        <ui:Button name="gistSyncButton" class="unity-button" text="Update" />
+                                        <ui:Button name="gistRemoveButton" class="unity-button" text="Remove" />
+                                    </ui:VisualElement>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="versionContainer">
+                            <ui:Label name="detailVersion" class="unity-label" text="" />
+                        </ui:VisualElement>
+
+                        <ui:Label name="registryAndAuthorLabel" class="unity-label" text="" />
+
+                        <ui:VisualElement name="detailNameContainer" class="leftRightAlign">
+                            <ui:Label name="detailName" class="unity-label leftAlign" text="" />
+                            <ui:Button name="quickStart" class="unity-button rightAlign" text="QuickStart" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="detailCustomContainer" />
+                <ui:VisualElement name="detailExtensionContainer" />
+
+                <ui:VisualElement name="detailsBody">
+                    <ui:VisualElement name="gistDetailsTabView">
+                        <ui:VisualElement class="container row headerRow">
+                            <ui:VisualElement name="gistDetailsTabViewheaderRow" class="tabsheaderRow container row">
+                                <ui:Button name="descriptionButton" class="unity-button tabHeaderSelected" text="Description" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="gistDetailsTabViewBodyContainer" class="tabsBody">
+                            <ui:VisualElement name="descriptionTab" class="gistDetailsDescriptionTab">
+                                <ui:Label name="detailDescription" class="unity-label font-big" text="" />
+                                <ui:VisualElement name="detailSourcePathContainer" class="container">
+                                    <ui:Label class="unity-label containerTitle" text="Installed From" />
+                                    <ui:Label name="detailSourcePath" class="unity-label font-big" text="" />
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

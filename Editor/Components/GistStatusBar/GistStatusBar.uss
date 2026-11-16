@@ -1,0 +1,44 @@
+/* statusBar 样式：左侧状态栏（错误图标 / 状态文案 / loading spinner） */
+
+.gm-gist-status-bar {
+    border-top-width: 1px;
+    border-top-color: rgb(35, 35, 35);
+    height: 28px;
+    background-color: rgb(64, 64, 64);
+}
+
+.gm-gist-status-bar .gm-gist-status-bar__container {
+    flex-direction: row;
+    align-items: center;
+    height: 28px;
+    margin-left: 2px;
+}
+
+.gm-gist-status-bar .gm-gist-status-bar__error-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    margin-top: 2px;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/Error.png?fileID=2800000&guid=839011df7ba072b49a764e1298ffb212&type=3#Error");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.gm-gist-status-bar .gm-gist-status-bar__status-label {
+    font-size: 11px;
+    color: rgb(228, 228, 228);
+}
+
+.gm-gist-status-bar .gm-gist-status-bar__spinner {
+    flex-direction: row;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+.gm-gist-status-bar .gm-gist-status-bar__spinner > VisualElement {
+    width: 100%;
+    height: 100%;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/d_Refresh.png?fileID=2800000&guid=88126f14b5bf01045a244c729f9a61a6&type=3#d_Refresh");
+    -unity-background-scale-mode: scale-to-fit;
+}

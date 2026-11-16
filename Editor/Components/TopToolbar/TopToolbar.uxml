@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/TopToolbar/TopToolbar.uss" />
+    <ui:Template name="ToolbarSearch" src="/Packages/com.mud.modules.gistmanager/Editor/Components/ToolbarSearch/ToolbarSearch.uxml" />
+    <ui:Template name="ToolbarDropdown" src="/Packages/com.mud.modules.gistmanager/Editor/Components/ToolbarDropdown/ToolbarDropdown.uxml" />
+    <!-- TopToolbar：只负责工具栏内部结构与样式；外层槽位（21px 高度、底边线）由 GistManagerWindow 宿主负责 -->
+    <uie:Toolbar class="unity-toolbar gm-toolbar">
+        <ui:Instance template="ToolbarDropdown" name="toolbarAddMenu" class="gm-toolbar-instance gm-toolbar-instance--add" />
+        <uie:ToolbarButton name="toolbarSyncAllButton" class="gm-toolbar__sync" text="Sync All" />
+        <uie:ToolbarSpacer name="toolbarSpacer" class="gm-toolbar__spacer" />
+        <ui:Instance template="ToolbarDropdown" name="toolbarMoreMenu" class="gm-toolbar-instance gm-toolbar-instance--more" />
+        <ui:Instance template="ToolbarSearch" name="toolbarSearch" />
+    </uie:Toolbar>
+</ui:UXML>

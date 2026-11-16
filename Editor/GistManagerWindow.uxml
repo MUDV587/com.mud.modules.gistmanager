@@ -1,0 +1,24 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/GistManagerWindow.uss" />
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/Splitter/Splitter.uss" />
+    <ui:Template name="TopToolbar" src="/Packages/com.mud.modules.gistmanager/Editor/Components/TopToolbar/TopToolbar.uxml" />
+    <ui:Template name="gistList" src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistList/GistList.uxml" />
+    <ui:Template name="statusBar" src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistStatusBar/GistStatusBar.uxml" />
+    <ui:Template name="gistDetails" src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistDetails/GistDetails.uxml" />
+    <!-- Gist Manager 主窗口骨架：顶部工具栏 + 下方可调左右分栏（左 列表 / 右 详情 + 状态栏） -->
+    <ui:VisualElement class="gist-manager-window-root">
+        <ui:VisualElement name="topMenuToolbar">
+            <ui:Instance template="TopToolbar" name="topToolbar" />
+        </ui:VisualElement>
+        <ui:VisualElement name="mainContainer" class="gm-splitter">
+            <ui:VisualElement name="leftColumnContainer" class="gm-splitter__pane gm-splitter__pane--first">
+                <ui:Instance template="gistList" name="gistList" />
+                <ui:Instance template="statusBar" name="statusBar" />
+            </ui:VisualElement>
+            <ui:VisualElement name="SplitterHandle" class="gm-splitter__handle" />
+            <ui:VisualElement name="rightColumnContainer" class="gm-splitter__pane gm-splitter__pane--second">
+                <ui:Instance template="gistDetails" name="gistDetails" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

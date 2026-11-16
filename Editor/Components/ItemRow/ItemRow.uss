@@ -1,0 +1,126 @@
+/* Gist 条目行（24px 单行高）。图标采用 project://database 路径 */
+
+.gm-item-row {
+    flex-shrink: 0;
+    min-height: 24px;
+    position: relative;
+}
+
+.gm-item-row .rowDivider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgb(35, 35, 35);
+}
+
+.gm-item-row #gistName {
+    padding: 0 2px 0 2px;
+    margin: 0 0 0 8px;
+    flex-shrink: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -unity-text-align: lower-left;
+}
+
+.gm-item-row #versionLabel {
+    -unity-text-align: middle-right;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    flex-shrink: 1;
+    flex-grow: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gm-item-row #rowContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1px 2px;
+    height: 24px;
+    justify-content: flex-start;
+}
+
+.gm-item-row #rowContent .left,
+.gm-item-row #rowContent .middle {
+    align-self: center;
+}
+
+.gm-item-row #rowContent #versionLabel {
+    align-self: center;
+}
+
+.gm-item-row #rowContent #rowStates {
+    align-self: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.gm-item-row #rowContent #rowStateIcon {
+    justify-content: center;
+    align-items: stretch;
+}
+
+.gm-item-row #rowContent .left {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 90px;
+    flex-direction: row;
+}
+
+.gm-item-row #rowContent .middle {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gm-item-row #rowContent #numPackages {
+    font-size: 10px;
+    margin: 0;
+    -unity-text-align: lower-left;
+    justify-content: center;
+}
+
+.gm-item-row #rowContent .status {
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.gm-item-row #rowContent .status.installed {
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/Installed.png?fileID=2800000&guid=8735e7a2db9d13c45b1346a4a72322a7&type=3#Installed");
+}
+
+/* gist 仅挂 installed 一个状态，installedasdependency/indevelopment/custom/
+   updateavailable/importavailable/downloadavailable/inprogress/error/warning 规则已无人执行，已删除。 */
+
+/* 灰显：整包所有文件都被禁用（tooltip 解释原因；selected 白字规则特异性更高，选中时仍以白字呈现） */
+.gm-item-row.is-disabled #gistName,
+.gm-item-row.is-disabled #versionLabel,
+.gm-item-row.is-disabled #numPackages {
+    color: rgb(153, 153, 153);
+}
+
+/* gistmanager 的 version 位：gist id 前 8 位，灰显作为次要信息（.selected 白字规则优先级更高） */
+.gm-item-row.id-version #versionLabel {
+    color: rgb(160, 160, 160);
+    font-size: 10px;
+}
+
+/* 选中态：蓝底白字 */
+.gm-item-row .rowContent.selected #gistName,
+.gm-item-row .rowContent.selected #versionLabel,
+.gm-item-row .rowContent.selected #numPackages {
+    color: rgb(255, 255, 255);
+}
+
+.gm-item-row .rowContent.selected {
+    background-color: rgb(44, 93, 135);
+}

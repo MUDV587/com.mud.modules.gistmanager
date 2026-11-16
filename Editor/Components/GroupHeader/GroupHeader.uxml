@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/GroupHeader/GroupHeader.uss" />
+    <!-- GroupHeader：组头（作者分组折叠）（caret + 组名）。组件自带样式与控制器。 -->
+    <ui:VisualElement name="groupHeader" class="gm-group-header">
+        <ui:VisualElement name="headerRow">
+            <ui:VisualElement name="caret" class="gm-group-header__caret" />
+            <ui:Label name="headerTitle" text="Group Name" />
+        </ui:VisualElement>
+        <ui:VisualElement name="groupContainer" />
+    </ui:VisualElement>
+</ui:UXML>

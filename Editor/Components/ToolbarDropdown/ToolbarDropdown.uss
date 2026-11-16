@@ -1,0 +1,46 @@
+/* ToolbarDropdown：工具栏下拉按钮样式 */
+
+.gm-toolbar-dropdown {
+    flex-direction: row;
+    align-items: center;
+    height: 20px;
+    padding: 0 4px;
+    margin: 0;
+    /* 默认就带 1px 透明边框——避免 focus 时 border 增宽导致兄弟元素右移 1px */
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(238, 238, 238);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.gm-toolbar-dropdown:hover {
+    background-color: rgb(62, 62, 62);
+}
+
+.gm-toolbar-dropdown:focus {
+    /* 聚焦只改 border-color，不再 border-width：不占兄弟元素像素 */
+    border-color: rgb(55, 142, 231);
+    background-color: rgb(58, 58, 58);
+}
+
+.gm-toolbar-dropdown:active {
+    background-color: rgb(52, 52, 52);
+}
+
+/* 尾部下拉箭头（ShowCaret=false 的按钮如 More 菜单会隐藏） */
+.gm-toolbar-dropdown__caret {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    margin-left: 4px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/d_dropdown.png?fileID=2800000&guid=ac083a97b7b78724e8aa47fca76c898b&type=3#d_dropdown");
+    background-size: contain;
+    background-position: center center;
+    -unity-background-scale-mode: scale-to-fit;
+}
+

@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/GistStatusBar/GistStatusBar.uss" />
+    <!-- statusBar：左侧状态栏（错误图标 / 状态文案 / loading spinner） -->
+    <ui:VisualElement class="gm-gist-status-bar">
+        <ui:VisualElement name="statusBarContainer" class="gm-gist-status-bar__container">
+            <ui:Label name="errorIcon" class="unity-label gm-gist-status-bar__error-icon" />
+            <ui:Label name="statusLabel" class="unity-label gm-gist-status-bar__status-label" text="Last update" />
+            <ui:VisualElement name="loadingSpinner" class="gm-gist-status-bar__spinner">
+                <ui:VisualElement />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

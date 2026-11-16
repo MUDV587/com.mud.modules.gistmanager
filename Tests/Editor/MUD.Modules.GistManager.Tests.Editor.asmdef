@@ -1,0 +1,13 @@
+{
+    "name": "MUD.Modules.GistManager.Tests.Editor",
+    "rootNamespace": "MUD.Modules.GistManager.Tests",
+    "references": [
+        "MUD.Modules.GistManager.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

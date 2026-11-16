@@ -1,0 +1,82 @@
+/* TopToolbar 组件样式
+   所有选择器都基于组件根 class .gm-toolbar，不依赖宿主窗口的 ID，
+   这样同一份 UXML+USS 可以放进任意窗口复用。 */
+
+.gm-toolbar {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/* Add：d_CreateAddNew 图标（右移 1px）+ 下拉 caret，右边缘 1px 分割线 */
+.gm-toolbar .gm-toolbar-instance--add {
+    border-right-width: 1px;
+    border-right-color: rgb(35, 35, 35);
+    min-width: 38px;
+    margin-left: 0;
+    padding-left: 1px;
+}
+
+.gm-toolbar .gm-toolbar-instance--add .gm-toolbar-dropdown {
+    padding-left: 0;
+}
+
+.gm-toolbar .gm-toolbar-instance--add .gm-toolbar-dropdown Label.gm-toolbar-dropdown__label {
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/d_CreateAddNew.png?fileID=2800000&guid=cca6387d7f64f5e42938fcb1f85ed5d8&type=3#d_CreateAddNew");
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-text-align: middle-center;
+    color: rgba(0, 0, 0, 0);
+    margin-left: 1px;
+}
+
+/* Sync All：独立工具栏按钮，右边缘 1px 分割线 */
+.gm-toolbar .gm-toolbar__sync {
+    overflow: hidden;
+    flex-direction: row;
+    margin-left: 0;
+    margin-top: 1px;
+    min-width: 62px;
+    border-right-width: 1px;
+    border-right-color: rgb(35, 35, 35);
+}
+
+.gm-toolbar .gm-toolbar__spacer {
+    flex-grow: 1;
+}
+
+/* More（⋮）：只有图标，没有文字，没有左右边线 */
+.gm-toolbar .gm-toolbar-instance--more {
+    border-width: 0;
+    min-width: 0;
+    margin-left: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.gm-toolbar .gm-toolbar-instance--more .gm-toolbar-dropdown {
+    min-width: 0;
+    height: 20px;
+    padding: 0 2px;
+    /* 继承基类 .gm-toolbar-dropdown 的 border-width: 1px；:focus 时可见蓝框 */
+}
+
+.gm-toolbar .gm-toolbar-instance--more .gm-toolbar-dropdown Label.gm-toolbar-dropdown__label {
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    background-image: url("project://database/Packages/com.mud.modules.gistmanager/Editor/Icons/More.png?fileID=2800000&guid=78487303023b430abf24004ed193cc9e&type=3#More");
+    -unity-background-scale-mode: scale-to-fit;
+    color: rgba(0, 0, 0, 0);
+}
+
+/* Focus 规则放在最后：CSS specificity 与前面 .gm-toolbar-instance--*.gm-toolbar-dropdown 同为 (0,3,0)
+   加载顺序后于它们，覆盖住 right-border-color 的 rgba(35,35,35) */
+.gm-toolbar .gm-toolbar-instance--add .gm-toolbar-dropdown:focus,
+.gm-toolbar .gm-toolbar-instance--more .gm-toolbar-dropdown:focus {
+    background-color: rgb(58, 58, 58);
+    border-color: rgb(55, 142, 231);
+}

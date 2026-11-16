@@ -1,0 +1,34 @@
+/* EmptyArea 组件样式
+   居中显示 “No items found” 与 Clear Filters 按钮；flex 行为由父级（gistList）决定。 */
+
+.gm-empty-area {
+    flex: 1 0 auto;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+}
+
+.gm-empty-area .gm-empty-area__title {
+    flex: 1 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    -unity-text-align: middle-center;
+    font-size: 12px;
+    white-space: normal;
+}
+
+.gm-empty-area .gm-empty-area__inner {
+    flex: 0 0 auto;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.gm-empty-area .gm-empty-area__action {
+    flex: 0 0 auto;
+    margin-top: 10px;
+    padding: 6px 24px;
+    border-bottom-width: 0;
+    cursor: link;
+}

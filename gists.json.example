@@ -1,0 +1,22 @@
+{
+  "targetRoot": "Packages/gist-scripts",
+  "gists": [
+    {
+      "id": "dfc43134fbfefb820d0adbc5d7c25fb3",
+      "author": "yasirkula",
+      "description": "Unitypackage Extractor",
+      "packageDir": "yasirkula.unitypackage-extractor",
+      "files": [
+        {
+          "filename": "UnitypackageExtractor.cs",
+          "targetPath": "Packages/gist-scripts/yasirkula.unitypackage-extractor/Editor/UnitypackageExtractor.cs",
+          "enabled": true,
+          "rawUrl": "https://gist.githubusercontent.com/yasirkula/dfc43134/raw/UnitypackageExtractor.cs",
+          "meta": "",
+          "placement": "Editor",
+          "sha256": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/EmptyArea/EmptyArea.uss" />
+    <ui:VisualElement class="gm-empty-area">
+        <ui:VisualElement name="innerContainer" class="gm-empty-area__inner">
+            <ui:Label name="emptyAreaMessage" class="unity-label title gm-empty-area__title" text="No items found" />
+            <ui:Button name="emptyAreaButton" class="unity-button button gm-empty-area__action" text="Clear Filters" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

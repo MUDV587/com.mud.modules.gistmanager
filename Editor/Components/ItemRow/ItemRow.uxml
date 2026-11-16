@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="/Packages/com.mud.modules.gistmanager/Editor/Components/ItemRow/ItemRow.uss" />
+    <!-- Gist 条目行（24px，单行高） -->
+    <ui:VisualElement name="itemRow" class="gm-item-row list-item">
+        <ui:VisualElement name="rowContent" class="rowContent">
+            <ui:VisualElement name="rowLeft" class="left">
+                <ui:VisualElement name="rowLeftMiddle" class="middle">
+                    <ui:Label name="gistName" text="Package Name" class="name" />
+                    <ui:Label name="numPackages" text="1 packages" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="versionLabel" text="1.0.0" class="version middle" />
+            <ui:VisualElement name="rowStates">
+                <ui:VisualElement name="rowStateIcon" class="status" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="rowDivider" class="rowDivider" />
+    </ui:VisualElement>
+</ui:UXML>

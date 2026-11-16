@@ -1,0 +1,26 @@
+{
+  "name": "com.mud.modules.gistmanager",
+  "version": "0.3.0",
+  "displayName": "MUD.Modules.GistManager",
+  "description": "Editor tool that manages GitHub Gist snippets through a single source-of-truth manifest (gists.json), with GUI add/enable and an explicit sync step that downloads files into the project.",
+  "unity": "2022.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MUDV587/com.mud.modules.gistmanager.git"
+  },
+  "homepage": "https://github.com/MUDV587/com.mud.modules.gistmanager",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  },
+  "keywords": [
+    "gist",
+    "github",
+    "snippets",
+    "manifest",
+    "ci"
+  ],
+  "author": {
+    "name": "MUD"
+  }
+}

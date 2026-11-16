@@ -1,0 +1,282 @@
+/* Gist Manager 主窗口 - 统一样式表
+   职责：容器外壳（顶部 21px Toolbar + 左右可拖分栏 + 底部 28px 状态栏槽位）+
+   code 创建的窗口元素（Add 面板 / 文件行 / 多选折叠 / 空态 / Files 区块 / gist 侧小覆盖 / .gm-hidden）
+   加载顺序：在 GistManagerWindow.uxml 中最后一个 <Style> 加载，同特异性时赢组件默认样式。 */
+
+.gist-manager-window-root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+}
+
+#topMenuToolbar {
+    height: 21px;
+    flex-shrink: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(35, 35, 35);
+}
+
+#topMenuToolbar > TemplateContainer {
+    flex-grow: 1;
+    min-height: 0;
+}
+
+#topMenuToolbar .unity-toolbar {
+    height: 100%;
+    border-bottom-width: 0;
+}
+
+#rightColumnContainer > TemplateContainer {
+    flex: 1 0 0;
+    min-height: 0;
+}
+
+#gistList {
+    flex: 1 0 0;
+    min-height: 0;
+}
+
+#statusBar {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 28px;
+    height: 28px;
+}
+
+/* ================= 以下为 code 创建的窗口元素样式 ================= */
+
+/* === 工具类：整元素隐藏/显示切换（替代 inline display/visibility 赋值） === */
+.gm-hidden {
+    display: none;
+}
+
+/* === 添加面板（内联卡片：附在工具栏下方的绝对定位卡片，非独立窗口） === */
+.gist-add-panel {
+    position: absolute;
+    top: 21px;      /* 对齐 Toolbar 高度 */
+    left: 2px;
+    width: 340px;
+    flex-direction: column;
+    background-color: rgb(56, 56, 56);
+    border-width: 1px;
+    border-color: rgb(35, 35, 35);
+    border-radius: 4px;
+    padding: 10px 10px 8px 10px;
+}
+
+.gist-add-panel__title {
+    -unity-font-style: bold;
+    font-size: 12px;
+    color: rgb(235, 235, 235);
+}
+
+.gist-add-panel__hint {
+    font-size: 11px;
+    color: rgb(153, 153, 153);
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.gist-add-panel__field {
+    margin-top: 6px;
+    height: 20px;
+}
+
+/* 空输入时叠加在 TextField 内的占位文本（pickingMode=Ignore） */
+.gist-add-panel__placeholder {
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    bottom: 1px;
+    -unity-text-align: middle-left;
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+}
+
+.gist-add-panel__hintlabel {
+    font-size: 10px;
+    color: rgb(140, 140, 140);
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.gist-add-panel__hintlabel.gist-add-hint--error {
+    color: rgb(222, 105, 97);
+}
+
+.gist-add-panel__buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.gist-add-panel__cancel {
+    margin-right: 6px;
+}
+
+/* Add 主按钮：蓝底深蓝按钮 */
+.gist-add-panel__confirm {
+    background-color: rgb(55, 142, 231);
+    border-color: rgb(35, 90, 150);
+}
+
+/* “Open Folder / 打开文件夹”按钮（注入到标题栏右侧按钮区） */
+.gist-open-folder-button {
+    margin-right: 4px;
+}
+
+/* === 详情面板：gist 侧的小覆盖（组件内部结构不变，只加 class） === */
+/* 版本号短 id 灰显 */
+.gist-detail-version {
+    color: rgb(153, 153, 153);
+}
+
+/* === 多选详情区（multiSelectDetails 壳内：信息 + 折叠按钮） === */
+.gist-multiselect__info {
+    margin-left: 8px;
+    margin-top: 4px;
+    font-size: 11px;
+    white-space: normal;
+}
+
+.gist-multiselect__folds {
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.gist-multiselect__button {
+    height: 22px;
+    margin-bottom: 4px;
+    -unity-text-align: middle-left;
+    padding-left: 8px;
+}
+
+/* === 右栏空态（清单为空 / 无选中时的引导） === */
+.gist-details-empty {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.gist-details-empty__title {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: rgb(191, 191, 191);
+    margin-bottom: 4px;
+}
+
+.gist-details-empty__hint {
+    font-size: 11px;
+    color: rgb(153, 153, 153);
+    margin-bottom: 10px;
+}
+
+/* === Files 区块（descriptionTab 内：标题 / 文件容器 / 说明尾注） === */
+.gist-files__header {
+    -unity-font-style: bold;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.gist-files__container {
+    flex-direction: column;
+    margin-top: 4px;
+}
+
+.gist-files__hint {
+    font-size: 10px;
+    color: rgb(153, 153, 153);
+    margin-top: 6px;
+    white-space: normal;
+}
+
+.gist-files__empty {
+    font-size: 11px;
+    color: rgb(153, 153, 153);
+    white-space: normal;
+}
+
+/* === 文件行（Enable toggle / 归属下拉 / 移除 + 路径行 + 本地改动警示行 + .meta 提示） === */
+.gist-file-row {
+    flex-direction: column;
+    margin-bottom: 6px;
+    padding: 4px 4px 4px 0;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    background-color: rgb(43, 43, 43);
+}
+
+.gist-file-row__row1 {
+    flex-direction: row;
+    align-items: center;
+}
+
+.gist-file-row__toggle {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.gist-file-row__placement {
+    flex-shrink: 0;
+    width: 84px;
+    margin-left: 4px;
+}
+
+.gist-file-row__remove {
+    width: 22px;
+    height: 18px;
+    margin-left: 4px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gist-file-row__row2 {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.gist-file-row__path-label {
+    width: 34px;
+    font-size: 10px;
+    color: rgb(153, 153, 153);
+}
+
+.gist-file-row__path-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 11px;
+}
+
+.gist-file-row__modified {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.gist-file-row__warn {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 10px;
+    color: rgb(235, 163, 61);
+    white-space: normal;
+}
+
+.gist-file-row__overwrite {
+    height: 18px;
+    margin-left: 4px;
+}
+
+.gist-file-row__meta {
+    font-size: 10px;
+    color: rgb(153, 153, 153);
+    margin-top: 2px;
+}
