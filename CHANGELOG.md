@@ -2,6 +2,16 @@
 
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [0.3.1] - 2026-11-16
+
+Patch bump. 与 v0.3.0 同源，仅做发行发布。
+
+### 更新内容
+
+- **包版本号** bump 0.3.0 → 0.3.1（`package.json` 同步）
+- docs: 补 target-root 英文文档截图（`Documentation~/docs/images/target-root-{en,zh}.png`）
+- docs: mkdocs 文档站点已在 GitHub Pages 发布（`Deploy documentation` workflow）
+
 ## [0.3.0] - 2026-11-16
 
 整体品质与可靠性里程碑再往前走一步：启用/禁用升级为整包语义、改动前原子保护全链路落地、Target Root 可搬运、工具备份统一化、切换/禁用后 Unity 不再需要手动刷新。
